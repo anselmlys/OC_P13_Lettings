@@ -1,3 +1,5 @@
+'''Configure and expose the WSGI application for deployment.'''
+
 import os
 
 from django.core.wsgi import get_wsgi_application

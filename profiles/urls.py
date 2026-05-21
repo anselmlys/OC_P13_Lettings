@@ -1,3 +1,5 @@
+'''Define URL patterns for the profiles application.'''
+
 from django.urls import path
 
 from profiles import views

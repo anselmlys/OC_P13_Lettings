@@ -1,7 +1,8 @@
+'''Configure Django admin interfaces for letting and address models.'''
+
 from django.contrib import admin
 
-from lettings.models import Letting
-from lettings.models import Address
+from lettings.models import Letting, Address
 
 
 admin.site.register(Letting)

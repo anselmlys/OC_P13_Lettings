@@ -1,3 +1,5 @@
+'''Handle views for the profiles application.'''
+
 from django.shortcuts import render
 
 from profiles.models import Profile
@@ -7,8 +9,19 @@ from profiles.models import Profile
 # sed consequat libero pulvinar eget. Fusc faucibus, urna quis auctor pharetra,
 # massa dolor cursus neque, quis dictum lacus d
 def profiles_index(request):
+    '''
+    Display the list of all profiles.
+
+    Args:
+        request (HttpRequest): The incoming HTTP request.
+
+    Returns:
+        HttpResponse: The rendered profiles index page.
+    '''
+
     profiles_list = Profile.objects.all()
     context = {'profiles_list': profiles_list}
+
     return render(request, 'profiles/profiles_index.html', context)
 
 
@@ -17,6 +30,18 @@ def profiles_index(request):
 # dolor id facilisis fringilla, eros leo tristique lacus, it.
 # Nam aliquam dignissim congue. Pellentesque habitant morbi tristique senectus et netus et males
 def profile(request, username):
+    '''
+    Display the detail page for a user profile.
+
+    Args:
+        request (HttpRequest): The incoming HTTP request.
+        username (str): The username associated with the profile.
+
+    Returns:
+        HttpResponse: The rendered profile detail page.
+    '''
+
     profile = Profile.objects.get(user__username=username)
     context = {'profile': profile}
+
     return render(request, 'profiles/profile.html', context)

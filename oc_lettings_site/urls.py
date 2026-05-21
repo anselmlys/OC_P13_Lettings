@@ -1,3 +1,5 @@
+'''Define URL patterns for the oc_lettings_site application.'''
+
 from django.contrib import admin
 from django.urls import path, include
 

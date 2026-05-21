@@ -1,3 +1,5 @@
+'''Define URL patterns for the lettings application.'''
+
 from django.urls import path
 
 from lettings import views
