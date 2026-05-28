@@ -1,8 +1,13 @@
 '''Handle views for the lettings application.'''
 
+import logging
+from django.http import Http404
 from django.shortcuts import render
 
 from lettings.models import Letting
+
+
+logger = logging.getLogger(__name__)
 
 
 # Aenean leo magna, vestibulum et tincidunt fermentum, consectetur quis velit.
@@ -48,7 +53,12 @@ def letting(request, letting_id):
         HttpResponse: The rendered letting detail page.
     '''
 
-    letting = Letting.objects.get(id=letting_id)
+    try:
+        letting = Letting.objects.get(id=letting_id)
+    except Letting.DoesNotExist:
+        logger.warning('Letting not found for letting_id=%s', letting_id)
+        raise Http404('Letting not found')
+
     context = {
         'title': letting.title,
         'address': letting.address,

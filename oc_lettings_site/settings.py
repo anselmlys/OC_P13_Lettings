@@ -1,8 +1,28 @@
 '''Django settings for the oc_lettings_site project.'''
 
 import os
-
 from pathlib import Path
+
+import sentry_sdk
+from dotenv import load_dotenv
+
+load_dotenv()
+SENTRY_DSN = os.getenv('SENTRY_DSN')
+
+
+if SENTRY_DSN:
+    sentry_sdk.init(
+        dsn=SENTRY_DSN,
+        send_default_pii=False,
+        enable_logs=True,
+    )
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+}
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent

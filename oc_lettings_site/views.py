@@ -1,6 +1,11 @@
 '''Handle index view for the oc_lettings_site application.'''
 
+import logging
+
 from django.shortcuts import render
+
+
+logger = logging.getLogger(__name__)
 
 
 # Lorem ipsum dolor sit amet, consectetur adipiscing elit.

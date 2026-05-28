@@ -1,8 +1,13 @@
 '''Handle views for the profiles application.'''
 
+import logging
+from django.http import Http404
 from django.shortcuts import render
 
 from profiles.models import Profile
+
+
+logger = logging.getLogger(__name__)
 
 
 # Sed placerat quam in pulvinar commodo. Nullam laoreet consectetur ex,
@@ -41,7 +46,12 @@ def profile(request, username):
         HttpResponse: The rendered profile detail page.
     '''
 
-    profile = Profile.objects.get(user__username=username)
+    try:
+        profile = Profile.objects.get(user__username=username)
+    except Profile.DoesNotExist:
+        logger.warning('Profile not found for username=%s', username)
+        raise Http404('Profile not found')
+
     context = {'profile': profile}
 
     return render(request, 'profiles/profile.html', context)
