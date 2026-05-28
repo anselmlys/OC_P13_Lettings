@@ -3,4 +3,6 @@ omit =
     */tests/*
     */migrations/*
     */__init__.py
+
+[report]
 show_missing = True
