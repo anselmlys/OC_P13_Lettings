@@ -13,7 +13,7 @@ pytest.ini
 .coveragerc
 
 **/docker-compose*
-**/compose.y*ml
+**/compose*.y*ml
 **/Dockerfile*
 
 README.md
