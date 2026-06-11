@@ -73,5 +73,51 @@ Dans le reste de la documentation sur le développement local, il est supposé q
 
 Utilisation de PowerShell, comme ci-dessus sauf :
 
-- Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
+- Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1`
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+### Déploiement
+
+#### Fonctionnement
+
+Le déploiement est automatisé grâce à l'utilisation de Github Actions.
+Lorsque l'on push un commit sur le repository, une pipeline CI/CD se lance. Si l'une des étapes de la pipeline échoue, la pipeline s'arrête et le déploiement n'est pas effectué.
+Il faut que le commit concerne la branche "master" pour que la pipeline aille jusqu'au déploiement. Sinon, elle s'arrêtera après avoir validé les tests.
+
+#### Etapes de la pipeline
+
+1. test (sur toutes les branches)
+    * Lance les tests
+    * Lance le linting
+    * Vérifie le coverage (>80%)
+
+2. build-and-push-docker (sur branche master)
+    * Crée une image docker
+    * Push l'image sur Docker Hub
+
+3. deploy (sur branche master)
+    * Déploie l'image via Render
+
+Chaque étape attend que la précédente soit validée avant de se lancer. Il est possible de consulter l'ensemble de la pipeline dans le fichier "django.yml".
+
+#### Configuration
+
+- Docker Hub : c'est là où l'image sera stockée. Dans les settings du repo Github, les secrets "DOCKERHUB_USERNAME" et "DOCKERHUB_TOKEN" sont renseignés afin que la pipeline de Github puisse communiquer avec Docker et enregistrer la nouvelle image.
+
+- Render : [Render](https://render.com/) est l'hébergeur de ce projet. Le Web Service qui sert à déployer l'app est lié à l'image Docker ayant le tag "latest". Afin que le déploiement soit automatisé, "RENDER_DEPLOY_HOOK_URL" est ajouté aux secrets du repo Github.
+
+- Fichiers statiques : "collectstatic" est executé lors du build Docker. Les fichiers sont ensuite servis par Whitenoise.
+
+- Base de donnée : les données sont actuellement stockées sur le fichier "oc-lettings-site.sqlite3" qui est présent dans l'image. L'utilisation de la version gratuite du Web Service de Render fait que les modifications de données ne sont pas persistantes après redéploiement du service. Pour les rendre persistantes, il faut passer à une version payante, créer un disque dans le service Render et copier le ficher SQLite dans ce disque persistant.
+
+#### Test image en local
+
+Il est possible de générer une image en local à partir de la racine du projet avec la commande :
+```
+docker compose up
+```
+
+Toujours depuis la racine du projet, on peut récupérer la dernière version de l'image sur Docker Hub avec la commande :
+```
+docker compose -f compose.prod.yaml up
+```
