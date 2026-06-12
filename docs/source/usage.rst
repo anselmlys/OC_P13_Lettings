@@ -6,9 +6,7 @@ Accéder à l'application
 -----------------------
 
 Une fois l'application lancée, le site est accessible à l'adresse suivante :
-
-.. code-block:: text
-    http://127.0.0.1:8000/
+http://127.0.0.1:8000/
 
 La page d'accueil permet d'accéder aux différentes sections du site.
 
@@ -17,9 +15,7 @@ Consulter les locations
 -----------------------
 
 Les locations disponibles peuvent être consultées depuis la page :
-
-.. code-block:: text
-    http://127.0.0.1:8000/lettings/
+http://127.0.0.1:8000/lettings/
 
 Cette page affiche la liste des locations enregistrées dans l'application.
 
@@ -30,9 +26,7 @@ Consulter les profils utilisateurs
 ----------------------------------
 
 Les profils utilisateurs sont accessibles depuis :
-
-.. code-block:: text
-    http://127.0.0.1:8000/profiles/
+http://127.0.0.1:8000/profiles/
 
 Cette page affiche les profils enregistrés dans l'application.
 
@@ -43,9 +37,7 @@ Interface d'administration
 --------------------------
 
 L'interface d'administration Django est accessible à l'adresse :
-
-.. code-block:: text
-    http://127.0.0.1:8000/admin/
+http://127.0.0.1:8000/admin/
 
 Cette interface permet de gérer les données de l'application.
 

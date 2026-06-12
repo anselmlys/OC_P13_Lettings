@@ -19,19 +19,19 @@ Routes principales
 L'application expose les routes suivantes :
 
 +--------------------------------+---------------------------------------------+
-| URL | Description |
+| URL                            | Description                                 |
 +================================+=============================================+
-| / | Page d'accueil |
+| /                              | Page d'accueil                              |
 +--------------------------------+---------------------------------------------+
-| /lettings/ | Liste des locations |
+| /lettings/                     | Liste des locations                         |
 +--------------------------------+---------------------------------------------+
-| /lettings/<id>/ | Détail d'une location |
+| /lettings/<id>/                | Détail d'une location                       |
 +--------------------------------+---------------------------------------------+
-| /profiles/ | Liste des profils utilisateurs |
+| /profiles/                     | Liste des profils utilisateurs              |
 +--------------------------------+---------------------------------------------+
-| /profiles/<username>/ | Détail d'un profil utilisateur |
+| /profiles/<username>/          | Détail d'un profil utilisateur              |
 +--------------------------------+---------------------------------------------+
-| /admin/ | Interface d'administration Django |
+| /admin/                        | Interface d'administration Django           |
 +--------------------------------+---------------------------------------------+
 
 
@@ -41,6 +41,7 @@ Interface d'administration
 L'application utilise l'interface d'administration fournie par Django.
 
 Cette interface permet :
+
 * de créer des objets
 * de modifier les données
 * de supprimer des objets

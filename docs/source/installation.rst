@@ -17,18 +17,15 @@ Prérequis
 ---------------------
 
 1. Clôner le repository
-.. code-block:: bash
-    git clone https://github.com/anselmlys/OC_P13_Lettings.git
-    cd OC_P13_Lettings
+    ``git clone https://github.com/anselmlys/OC_P13_Lettings.git
+    cd OC_P13_Lettings``
 
 2. Créer l'environnement virtuel
-.. code-block:: bash
-    python -m venv venv
-    source venv/bin/activate
+    ``python -m venv venv
+    source venv/bin/activate``
 
 3. Installation des dépendances
-.. code-block:: bash
-    pip install -r requirements.txt
+    ``pip install -r requirements.txt``
 
 
 Variables d'environnement

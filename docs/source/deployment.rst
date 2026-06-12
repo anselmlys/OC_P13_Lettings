@@ -21,9 +21,7 @@ Pipeline CI/CD
 --------------
 
 La pipeline CI/CD est définie dans le fichier :
-
-.. code-block:: text
-    .github/workflows/django.yml
+``.github/workflows/django.yml``
 
 Le workflow contient trois jobs principaux :
 
@@ -48,6 +46,7 @@ Monitoring et gestion des erreurs
 L'application utilise Sentry pour le monitoring des erreurs.
 
 Les erreurs serveur et exceptions sont automatiquement remontées vers Sentry afin de faciliter :
+
 * le débogage
 * le monitoring
 * l'analyse des erreurs de production

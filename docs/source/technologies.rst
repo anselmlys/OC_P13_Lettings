@@ -7,52 +7,52 @@ Backend
 -------
 
 +----------------------+----------------------------------------------+
-| Technologie | Description |
+| Technologie          | Description                                  |
 +======================+==============================================+
-| Python 3.8 | Langage principal du projet |
+| Python 3.8           | Langage principal du projet                  |
 +----------------------+----------------------------------------------+
-| Django 3.0 | Framework web backend |
+| Django 3.0           | Framework web backend                        |
 +----------------------+----------------------------------------------+
-| SQLite | Base de données utilisée par l'application |
+| SQLite               | Base de données utilisée par l'application   |
 +----------------------+----------------------------------------------+
-| Gunicorn | Serveur WSGI utilisé en production |
+| Gunicorn             | Serveur WSGI utilisé en production           |
 +----------------------+----------------------------------------------+
-| WhiteNoise | Gestion des fichiers statiques en production |
+| WhiteNoise           | Gestion des fichiers statiques en production |
 +----------------------+----------------------------------------------+
 
 Conteneurisation et déploiement
 -------------------------------
 
 +----------------------+------------------------------------------------------+
-| Technologie | Description |
+| Technologie          | Description                                          |
 +======================+======================================================+
-| Docker | Création et exécution des conteneurs |
+| Docker               | Création et exécution des conteneurs                 |
 +----------------------+------------------------------------------------------+
-| Docker Hub | Hébergement des images Docker |
+| Docker Hub           | Hébergement des images Docker                        |
 +----------------------+------------------------------------------------------+
-| Render | Hébergement et déploiement de l'application |
+| Render               | Hébergement et déploiement de l'application          |
 +----------------------+------------------------------------------------------+
 
 CI/CD et qualité du code
 ------------------------
 
 +----------------------+------------------------------------------------------+
-| Technologie | Description |
+| Technologie          | Description                                          |
 +======================+======================================================+
-| GitHub Actions | Pipeline CI/CD automatisée |
+| GitHub Actions       | Pipeline CI/CD automatisée                           |
 +----------------------+------------------------------------------------------+
-| Pytest | Framework de tests |
+| Pytest               | Framework de tests                                   |
 +----------------------+------------------------------------------------------+
-| Coverage | Vérification du taux de couverture des tests |
+| Coverage             | Vérification du taux de couverture des tests         |
 +----------------------+------------------------------------------------------+
-| Flake8 | Analyse statique et linting du code |
+| Flake8               | Analyse statique et linting du code                  |
 +----------------------+------------------------------------------------------+
 
 Monitoring
 ----------
 
 +----------------------+------------------------------------------------------+
-| Technologie | Description |
+| Technologie          | Description                                          |
 +======================+======================================================+
-| Sentry | Monitoring des erreurs et exceptions |
+| Sentry               | Monitoring des erreurs et exceptions                 |
 +----------------------+------------------------------------------------------+
